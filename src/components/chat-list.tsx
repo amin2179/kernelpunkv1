@@ -26,7 +26,7 @@ export function ChatList() {
       ) : (
         <div className="flex h-full flex-col items-center justify-center text-muted-foreground">
           <Icons.logo className="h-16 w-16 mb-4" />
-          <h2 className="text-2xl font-semibold">Welcome to TerminalAI</h2>
+          <h2 className="text-2xl font-semibold">Welcome to KernelPunk</h2>
           <p>Start a new conversation below.</p>
         </div>
       )}

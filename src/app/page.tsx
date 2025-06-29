@@ -38,7 +38,7 @@ export default function Home() {
                 <span className="sr-only">Toggle Sidebar</span>
               </Button>
             </SheetTrigger>
-            <h1 className="text-xl font-bold text-primary text-glow">TerminalAI</h1>
+            <h1 className="text-xl font-bold text-primary text-glow text-glitch">KernelPunk</h1>
             <div className="w-8" />
           </header>
           <ChatPanel />

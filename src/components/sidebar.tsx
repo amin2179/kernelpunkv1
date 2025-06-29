@@ -18,8 +18,8 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
     <div className="flex h-full w-full flex-col bg-card text-foreground md:w-80 md:border-r">
       <div className="flex h-14 items-center border-b px-4">
         <Icons.logo className="h-8 w-8 text-primary" />
-        <h1 className="ml-3 text-2xl font-bold text-primary text-glow">
-          TerminalAI
+        <h1 className="ml-3 text-2xl font-bold text-primary text-glow text-glitch">
+          KernelPunk
         </h1>
       </div>
 
@@ -34,6 +34,10 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
           <Icons.settings className="h-5 w-5" />
           <span>Settings</span>
         </Button>
+      </div>
+      
+      <div className="mt-auto p-4 text-center text-xs text-muted-foreground">
+        <p>A glitchy terminal by @aminroumiany</p>
       </div>
 
       <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />

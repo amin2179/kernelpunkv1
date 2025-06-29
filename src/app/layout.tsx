@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'TerminalAI',
-  description: 'Your personal AI terminal.',
+  title: 'KernelPunk',
+  description: 'Your personal AI terminal. A glitch in the system.',
 };
 
 export default function RootLayout({
