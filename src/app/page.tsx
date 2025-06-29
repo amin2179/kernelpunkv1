@@ -43,7 +43,7 @@ export default function Home() {
           </header>
           <ChatPanel />
         </div>
-        <SheetContent side="left" className="w-[300px] p-0">
+        <SheetContent side="left" className="p-0">
           <Sidebar closeSidebar={() => setSidebarOpen(false)} />
         </SheetContent>
       </Sheet>
