@@ -5,7 +5,11 @@ import { SessionItem } from './session-item';
 import { Button } from '@/components/ui/button';
 import { Icons } from './icons';
 
-export function SessionList() {
+interface SessionListProps {
+  closeSidebar?: () => void;
+}
+
+export function SessionList({ closeSidebar }: SessionListProps) {
   const { sessions, activeSessionId, createNewSession } = useChatStore();
 
   const sortedSessions = Object.values(sessions).sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
@@ -25,6 +29,7 @@ export function SessionList() {
             key={session.id}
             session={session}
             isActive={session.id === activeSessionId}
+            closeSidebar={closeSidebar}
           />
         ))}
       </div>

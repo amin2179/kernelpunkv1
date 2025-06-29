@@ -23,7 +23,7 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
         </h1>
       </div>
 
-      <SessionList />
+      <SessionList closeSidebar={closeSidebar} />
 
       <div className="border-t p-4">
         <SystemPrompt />
@@ -37,7 +37,7 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
       </div>
       
       <div className="mt-auto p-4 text-center text-xs text-muted-foreground">
-        <p>A glitchy terminal by @aminroumiany</p>
+        <p>personal multi ai agent by @aminroumiany</p>
       </div>
 
       <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />

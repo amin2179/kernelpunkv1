@@ -10,9 +10,10 @@ import { Session } from '@/lib/types';
 interface SessionItemProps {
   session: Session;
   isActive: boolean;
+  closeSidebar?: () => void;
 }
 
-export function SessionItem({ session, isActive }: SessionItemProps) {
+export function SessionItem({ session, isActive, closeSidebar }: SessionItemProps) {
   const { selectSession, deleteSession, updateSessionName } = useChatStore();
   const [isRenaming, setIsRenaming] = useState(false);
   const [name, setName] = useState(session.name);
@@ -43,6 +44,12 @@ export function SessionItem({ session, isActive }: SessionItemProps) {
     }
   };
 
+  const handleClick = () => {
+    if (isRenaming) return;
+    selectSession(session.id);
+    closeSidebar?.();
+  };
+
   return (
     <div
       className={cn(
@@ -51,7 +58,7 @@ export function SessionItem({ session, isActive }: SessionItemProps) {
           ? 'bg-secondary text-foreground'
           : 'text-muted-foreground hover:bg-secondary/50 hover:text-foreground'
       )}
-      onClick={() => !isRenaming && selectSession(session.id)}
+      onClick={handleClick}
     >
       {isRenaming ? (
         <input
