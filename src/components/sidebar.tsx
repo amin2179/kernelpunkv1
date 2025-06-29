@@ -37,7 +37,9 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
       </div>
       
       <div className="mt-auto p-4 text-center text-xs text-muted-foreground">
-        <p>personal multi ai agent by @aminroumiany</p>
+        <p>i ToLd U im BEtter</p>
+        <p>GoOd NIGht baBE</p>
+        <p className="mt-4">personal multi ai agent by @aminroumiany</p>
       </div>
 
       <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />

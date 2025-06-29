@@ -19,15 +19,10 @@ const Logo = (props: React.ComponentProps<'svg'>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    fill="currentColor"
     {...props}
   >
-    <path d="M4 17l6-6-6-6" />
-    <path d="M12 19h8" />
+    <path d="M12.5 2C6.7 2 2 6.7 2 12.5S6.7 23 12.5 23 23 18.3 23 12.5 18.3 2 12.5 2zM10.2 19.2c-.6 0-1.2-.2-1.6-.6-1.2-1-2-2.3-2-3.5 0-1.1.5-2.5 1.5-3-.4-.3-.6-.8-.6-1.3 0-.9.7-1.6 1.6-1.6s1.6.7 1.6 1.6c0 .5-.2 1-.6 1.3 1 .5 1.5 1.9 1.5 3 0 1.2-.8 2.6-2 3.6-.3.2-.7.4-1.1.4zm4.6-7.7c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5 1.5-.7 1.5-1.5-.7-1.5-1.5-1.5z" />
   </svg>
 );
 
