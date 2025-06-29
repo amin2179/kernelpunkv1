@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { Sidebar } from '@/components/sidebar';
 import { ChatPanel } from '@/components/chat-panel';
 import { Button } from '@/components/ui/button';
@@ -29,16 +28,8 @@ export default function Home() {
   }
   
   return (
-    <main className="relative h-screen w-screen overflow-hidden">
-      <Image
-        src="https://placehold.co/1920x1080.png"
-        alt="Cyberpunk background"
-        fill
-        className="object-cover"
-        quality={80}
-        data-ai-hint="cyberpunk city night"
-      />
-      <div className="relative z-10 flex h-full w-full">
+    <main className="h-screen w-screen overflow-hidden bg-background">
+      <div className="flex h-full w-full">
         {isMobile ? (
           <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
             <div className="flex h-screen w-full flex-col bg-transparent text-foreground">

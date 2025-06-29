@@ -1,16 +1,20 @@
 'use client';
 
 import { create } from 'zustand';
-import { v4 } from 'uuid';
+import { v4 as uuidv4Import } from 'uuid';
 import { Session, Message, Settings } from '@/lib/types';
 import { describeImage } from '@/ai/flows/describe-image';
 
-let uuidv4 = v4;
-// Mock UUID for SSR
-if (typeof window === 'undefined') {
+const uuidv4 = (() => {
+  // Use real uuidv4 in the browser
+  if (typeof window !== 'undefined') {
+    return uuidv4Import;
+  }
+  // Mock UUID for SSR
   let count = 0;
-  uuidv4 = () => `ssr-uuid-${count++}`;
-}
+  return () => `ssr-uuid-${count++}`;
+})();
+
 
 const initialSettings: Settings = {
   geminiApiKey: '',
