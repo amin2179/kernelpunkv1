@@ -4,7 +4,7 @@ import React from 'react';
 import { Sidebar } from '@/components/sidebar';
 import { ChatPanel } from '@/components/chat-panel';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { Icons } from '@/components/icons';
 import { useChatStore } from '@/hooks/use-chat-store';
@@ -43,7 +43,8 @@ export default function Home() {
           </header>
           <ChatPanel />
         </div>
-        <SheetContent side="left" className="p-0">
+        <SheetContent side="left" className="w-4/5 p-0 sm:max-w-xs">
+          <SheetTitle className="sr-only">Sidebar</SheetTitle>
           <Sidebar closeSidebar={() => setSidebarOpen(false)} />
         </SheetContent>
       </Sheet>
