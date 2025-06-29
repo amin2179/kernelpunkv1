@@ -57,7 +57,7 @@ export function ChatInput() {
   return (
     <form
       onSubmit={handleSendMessage}
-      className="sticky bottom-0 flex w-full items-start space-x-2 border-t border-primary/20 bg-black/50 p-4 backdrop-blur-[2px]"
+      className="sticky bottom-0 flex w-full items-start space-x-2 border-t border-primary/20 bg-black/50 p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] backdrop-blur-[2px]"
     >
       <TooltipProvider>
         <Tooltip>

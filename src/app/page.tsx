@@ -40,11 +40,11 @@ export default function Home() {
   }
   
   return (
-    <main className="h-screen w-screen overflow-hidden bg-background">
+    <main className="h-full w-full overflow-hidden bg-background">
       <div className="flex h-full w-full">
         {isMobile ? (
           <Sheet open={sidebarOpen} onOpenChange={setSidebarOpen}>
-            <div className="flex h-screen w-full flex-col bg-transparent text-foreground">
+            <div className="flex h-full w-full flex-col bg-transparent text-foreground pt-[env(safe-area-inset-top)]">
               <header className="flex h-14 items-center justify-between border-b border-white/10 bg-black/50 px-4 backdrop-blur-sm">
                 <SheetTrigger asChild>
                   <Button variant="ghost" size="icon">
@@ -63,7 +63,7 @@ export default function Home() {
             </SheetContent>
           </Sheet>
         ) : (
-          <div className="flex h-screen w-full">
+          <div className="flex h-full w-full">
             <Sidebar />
             <div className="flex flex-1 flex-col">
               <ChatPanel />
