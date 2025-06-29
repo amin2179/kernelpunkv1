@@ -57,7 +57,7 @@ export function ChatInput() {
   return (
     <form
       onSubmit={handleSendMessage}
-      className="sticky bottom-0 flex w-full items-start space-x-2 border-t bg-background p-4"
+      className="sticky bottom-0 flex w-full items-start space-x-2 border-t border-primary/20 bg-black/50 p-4 backdrop-blur-[2px]"
     >
       <TooltipProvider>
         <Tooltip>
@@ -94,11 +94,11 @@ export function ChatInput() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type your message or upload an image..."
-          className="pr-20 ring-offset-background focus-visible:ring-1 focus-visible:ring-ring"
+          className="pr-20 ring-offset-background focus-visible:ring-1 focus-visible:ring-ring bg-transparent"
           rows={1}
         />
         {imageName && (
-          <div className="absolute bottom-2 left-2 flex items-center rounded-full bg-secondary px-2 py-1 text-xs">
+          <div className="absolute bottom-2 left-2 flex items-center rounded-full bg-black/70 px-2 py-1 text-xs">
             <Icons.image className="mr-1 h-4 w-4" />
             <span>{imageName}</span>
             <button

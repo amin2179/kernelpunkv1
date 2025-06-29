@@ -52,7 +52,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex h-screen bg-background text-foreground font-code">
+    <main className="flex h-screen text-foreground font-code">
       <Sidebar />
       <div className="flex flex-1 flex-col">
         <ChatPanel />
