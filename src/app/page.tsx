@@ -16,7 +16,7 @@ export default function Home() {
 
   React.useEffect(() => {
     store.init();
-  }, [store]);
+  }, [store.init]);
 
 
   if (!store.isInitialized) {
