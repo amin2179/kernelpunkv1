@@ -1,9 +1,16 @@
 'use client';
 
 import { create } from 'zustand';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 } from 'uuid';
 import { Session, Message, Settings } from '@/lib/types';
 import { describeImage } from '@/ai/flows/describe-image';
+
+let uuidv4 = v4;
+// Mock UUID for SSR
+if (typeof window === 'undefined') {
+  let count = 0;
+  uuidv4 = () => `ssr-uuid-${count++}`;
+}
 
 const initialSettings: Settings = {
   geminiApiKey: '',
@@ -278,9 +285,3 @@ useChatStoreImpl.subscribe((state) => {
 export const useChatStore = typeof window === 'undefined'
   ? () => ({ ...useChatStoreImpl.getState(), activeSession: null })
   : useChatStoreImpl;
-
-// Mock UUID for SSR
-if (typeof window === 'undefined') {
-  let count = 0;
-  uuidv4 = () => `ssr-uuid-${count++}`;
-}
