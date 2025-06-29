@@ -15,21 +15,21 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
   const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
-    <div className="flex h-full w-full flex-col bg-card text-foreground md:w-80 md:border-r">
-      <div className="flex h-14 items-center border-b px-4">
+    <div className="flex h-full w-full flex-col bg-black/50 text-foreground backdrop-blur-lg md:w-80 md:border-r md:border-white/10">
+      <div className="flex h-14 items-center border-b border-white/10 px-4">
         <Icons.logo className="h-8 w-8 text-primary" />
-        <h1 className="ml-3 text-2xl font-bold text-primary text-glow text-glitch">
+        <h1 className="ml-3 text-2xl font-bold text-primary text-glow">
           KernelPunk
         </h1>
       </div>
 
       <SessionList closeSidebar={closeSidebar} />
 
-      <div className="border-t p-4">
+      <div className="border-t border-white/10 p-4">
         <SystemPrompt />
       </div>
 
-      <div className="border-t p-2">
+      <div className="border-t border-white/10 p-2">
         <Button variant="ghost" className="w-full justify-start space-x-2 interactive-glow" onClick={() => setSettingsOpen(true)}>
           <Icons.settings className="h-5 w-5" />
           <span>Settings</span>
