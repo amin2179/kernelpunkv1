@@ -9,16 +9,19 @@ export function useMediaQuery(query: string) {
     if (typeof window === 'undefined') return;
 
     const media = window.matchMedia(query);
-    if (media.matches !== matches) {
+    
+    const listener = () => {
       setMatches(media.matches);
-    }
-    const listener = () => setMatches(media.matches);
+    };
+
+    // Set initial state
+    listener();
     
     // Use addEventListener for modern browsers
     media.addEventListener('change', listener);
     return () => media.removeEventListener('change', listener);
 
-  }, [matches, query]);
+  }, [query]);
 
   return matches;
 }
