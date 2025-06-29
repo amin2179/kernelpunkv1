@@ -14,6 +14,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useChatStore } from '@/hooks/use-chat-store';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { themes } from '@/lib/themes';
 
 interface SettingsDialogProps {
   open: boolean;
@@ -35,7 +37,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
           <DialogDescription>
-            Configure your API keys and endpoints.
+            Configure your API keys, endpoints, and themes.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
@@ -63,6 +65,29 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
             />
              <p className="text-xs text-muted-foreground">
               URL for your local LM Studio inference server.
+            </p>
+          </div>
+           <div className="space-y-2">
+            <Label htmlFor="theme-selector">Theme</Label>
+            <Select
+                value={localSettings.theme}
+                onValueChange={(theme) =>
+                    setLocalSettings({ ...localSettings, theme })
+                }
+            >
+                <SelectTrigger id="theme-selector">
+                    <SelectValue placeholder="Select a theme" />
+                </SelectTrigger>
+                <SelectContent>
+                    {themes.map((theme) => (
+                        <SelectItem key={theme.id} value={theme.id}>
+                            {theme.name}
+                        </SelectItem>
+                    ))}
+                </SelectContent>
+            </Select>
+            <p className="text-xs text-muted-foreground">
+                Select a visual theme for the application.
             </p>
           </div>
         </div>

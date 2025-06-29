@@ -16,4 +16,5 @@ export interface Session {
 export interface Settings {
   geminiApiKey: string;
   lmStudioUrl: string;
+  theme: string;
 }

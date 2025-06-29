@@ -8,15 +8,27 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/s
 import { useMediaQuery } from '@/hooks/use-media-query';
 import { Icons } from '@/components/icons';
 import { useChatStore } from '@/hooks/use-chat-store';
+import { themes } from '@/lib/themes';
 
 export default function Home() {
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [sidebarOpen, setSidebarOpen] = React.useState(false);
   const store = useChatStore();
+  const selectedThemeId = useChatStore((state) => state.settings.theme);
 
   React.useEffect(() => {
     store.init();
   }, [store.init]);
+
+  React.useEffect(() => {
+    const theme = themes.find((t) => t.id === selectedThemeId) || themes.find(t => t.id === 'kernelpunk');
+    const root = document.documentElement;
+    if (theme) {
+      Object.entries(theme.colors).forEach(([key, value]) => {
+        root.style.setProperty(key, value);
+      });
+    }
+  }, [selectedThemeId]);
 
 
   if (!store.isInitialized) {

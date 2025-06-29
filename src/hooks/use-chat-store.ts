@@ -19,6 +19,7 @@ const uuidv4 = (() => {
 const initialSettings: Settings = {
   geminiApiKey: '',
   lmStudioUrl: 'http://localhost:1234/v1',
+  theme: 'kernelpunk',
 };
 
 const initialSession: Session = {
@@ -62,12 +63,13 @@ const useChatStoreImpl = create<ChatState>((set, get) => ({
       const savedState = localStorage.getItem('terminal-ai-store');
       if (savedState) {
         const { sessions, activeSessionId, settings } = JSON.parse(savedState);
-        set({ sessions, activeSessionId, settings, isInitialized: true });
+        set({ sessions, activeSessionId, settings: {...initialSettings, ...settings}, isInitialized: true });
       } else {
         const newSessionId = initialSession.id;
         set({
           sessions: { [newSessionId]: initialSession },
           activeSessionId: newSessionId,
+          settings: initialSettings,
           isInitialized: true,
         });
       }
@@ -77,6 +79,7 @@ const useChatStoreImpl = create<ChatState>((set, get) => ({
       set({
         sessions: { [newSessionId]: initialSession },
         activeSessionId: newSessionId,
+        settings: initialSettings,
         isInitialized: true,
       });
     }
