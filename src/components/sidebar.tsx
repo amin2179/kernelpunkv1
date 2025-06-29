@@ -1,0 +1,42 @@
+'use client';
+
+import { useState } from 'react';
+import { Icons } from './icons';
+import { SessionList } from './session-list';
+import { SystemPrompt } from './system-prompt';
+import { Button } from './ui/button';
+import { SettingsDialog } from './settings-dialog';
+
+interface SidebarProps {
+    closeSidebar?: () => void;
+}
+
+export function Sidebar({ closeSidebar }: SidebarProps) {
+  const [settingsOpen, setSettingsOpen] = useState(false);
+
+  return (
+    <div className="flex h-full w-full flex-col bg-card text-foreground md:w-80 md:border-r">
+      <div className="flex h-14 items-center border-b px-4">
+        <Icons.logo className="h-8 w-8 text-primary" />
+        <h1 className="ml-3 text-2xl font-bold text-primary text-glow">
+          TerminalAI
+        </h1>
+      </div>
+
+      <SessionList />
+
+      <div className="border-t p-4">
+        <SystemPrompt />
+      </div>
+
+      <div className="border-t p-2">
+        <Button variant="ghost" className="w-full justify-start space-x-2 interactive-glow" onClick={() => setSettingsOpen(true)}>
+          <Icons.settings className="h-5 w-5" />
+          <span>Settings</span>
+        </Button>
+      </div>
+
+      <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
+    </div>
+  );
+}
