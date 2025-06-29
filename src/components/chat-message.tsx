@@ -28,13 +28,17 @@ export function ChatMessage({ message }: ChatMessageProps) {
 
       <div
         className={cn(
-          'max-w-xl rounded-lg px-4 py-3',
+          'max-w-xl rounded-lg px-4 py-3 shadow-lg border',
           isUser
-            ? 'bg-primary text-primary-foreground'
-            : 'bg-card'
+            ? 'bg-primary text-primary-foreground border-primary/50'
+            : 'bg-card border-border'
         )}
       >
-        <div className="prose prose-sm prose-invert text-foreground break-words">
+        <div className={cn(
+            'prose prose-sm break-words',
+            isUser ? '' : 'prose-invert text-card-foreground'
+          )}
+        >
           {message.image && (
              <div className="mb-2">
                 <Image
