@@ -40,7 +40,7 @@ export default function Home() {
                     <span className="sr-only">Toggle Sidebar</span>
                   </Button>
                 </SheetTrigger>
-                <h1 className="text-xl font-bold text-primary text-glow">KernelPunk</h1>
+                <h1 className="glitch text-xl font-bold" data-text="KernelPunk">KernelPunk</h1>
                 <div className="w-8" />
               </header>
               <ChatPanel />

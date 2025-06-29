@@ -18,7 +18,7 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
     <div className="flex h-full w-full flex-col bg-black/50 text-foreground backdrop-blur-lg md:w-80 md:border-r md:border-white/10">
       <div className="flex h-14 items-center border-b border-white/10 px-4">
         <Icons.logo className="h-8 w-8 text-primary" />
-        <h1 className="ml-3 text-2xl font-bold text-primary text-glow">
+        <h1 className="glitch ml-3 text-2xl font-bold" data-text="KernelPunk">
           KernelPunk
         </h1>
       </div>

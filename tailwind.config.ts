@@ -10,7 +10,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        code: ['"Share Tech Mono"', 'monospace'],
+        code: ['"VT323"', 'monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
