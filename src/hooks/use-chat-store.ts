@@ -18,7 +18,6 @@ const uuidv4 = (() => {
 
 const initialSettings: Settings = {
   geminiApiKey: '',
-  lmStudioUrl: 'http://localhost:1234/v1',
   theme: 'kernelpunk',
 };
 
@@ -204,7 +203,7 @@ const useChatStoreImpl = create<ChatState>((set, get) => ({
 
     // Handle LM Studio chat
     try {
-        const apiUrl = settings.lmStudioUrl ? `${settings.lmStudioUrl}/chat/completions` : 'http://localhost:1234/v1/chat/completions';
+        const apiUrl = '/api/lmstudio/chat/completions';
       
         const history = [
           { role: 'system', content: activeSession.systemPrompt },
@@ -266,7 +265,7 @@ const useChatStoreImpl = create<ChatState>((set, get) => ({
 
     } catch (error) {
         console.error('LM Studio API error:', error);
-        const errorMessage: Message = { id: uuidv4(), role: 'assistant', content: 'Error: Could not connect to LM Studio. Please check the URL and ensure the server is running.' };
+        const errorMessage: Message = { id: uuidv4(), role: 'assistant', content: 'Error: Could not connect to LM Studio. Please check your configuration and ensure the server is running.' };
         set(state => ({
           sessions: { ...state.sessions, [activeSessionId]: { ...activeSession, messages: [...updatedMessages, errorMessage] } }
         }));

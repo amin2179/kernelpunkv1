@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -26,6 +26,10 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
   const { settings, setSettings } = useChatStore();
   const [localSettings, setLocalSettings] = useState(settings);
 
+  useEffect(() => {
+    setLocalSettings(settings);
+  }, [settings, open]);
+
   const handleSave = () => {
     setSettings(localSettings);
     onOpenChange(false);
@@ -37,7 +41,7 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
           <DialogDescription>
-            Configure your API keys, endpoints, and themes.
+            Configure your API keys and themes. The app is configured to connect to LM Studio on its default port.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
@@ -52,20 +56,6 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
                 setLocalSettings({ ...localSettings, geminiApiKey: e.target.value })
               }
             />
-          </div>
-          <div className="space-y-2">
-            <Label htmlFor="lm-studio-url">LM Studio URL</Label>
-            <Input
-              id="lm-studio-url"
-              placeholder="e.g., http://localhost:1234/v1"
-              value={localSettings.lmStudioUrl}
-              onChange={(e) =>
-                setLocalSettings({ ...localSettings, lmStudioUrl: e.target.value })
-              }
-            />
-             <p className="text-xs text-muted-foreground">
-              URL for your local LM Studio inference server.
-            </p>
           </div>
            <div className="space-y-2">
             <Label htmlFor="theme-selector">Theme</Label>
