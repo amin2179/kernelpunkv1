@@ -41,10 +41,24 @@ export function SettingsDialog({ open, onOpenChange }: SettingsDialogProps) {
         <DialogHeader>
           <DialogTitle>Settings</DialogTitle>
           <DialogDescription>
-            Configure your API keys and themes. The app is configured to connect to LM Studio on its default port.
+            Configure your API keys, local model endpoint, and themes.
           </DialogDescription>
         </DialogHeader>
         <div className="space-y-4 py-4">
+          <div className="space-y-2">
+            <Label htmlFor="lm-studio-url">Local Model URL (LM Studio, Ollama)</Label>
+            <Input
+              id="lm-studio-url"
+              placeholder="http://localhost:1234/v1"
+              value={localSettings.lmStudioUrl}
+              onChange={(e) =>
+                setLocalSettings({ ...localSettings, lmStudioUrl: e.target.value })
+              }
+            />
+             <p className="text-xs text-muted-foreground">
+                Base URL for your local AI. For LM Studio, this is shown on the server page.
+            </p>
+          </div>
           <div className="space-y-2">
             <Label htmlFor="gemini-key">Gemini API Key</Label>
             <Input
