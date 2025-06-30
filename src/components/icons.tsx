@@ -22,7 +22,7 @@ const Logo = (props: React.ComponentProps<'svg'>) => (
     fill="currentColor"
     {...props}
   >
-    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/>
+    <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.24L19.76 8 12 11.76 4.24 8 12 4.24zM3 8.5v6.52l9 4.5v-6.52L3 8.5zm18 0l-9 4.5v6.52l9-4.5V8.5z" />
   </svg>
 );
 

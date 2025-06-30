@@ -38,7 +38,7 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
       
       <div className="mt-auto p-4 text-center text-xs text-muted-foreground">
         <p>its sleep baby dont were awake</p>
-        <p className="mt-4">personal multi ai agent by @aminroumiany</p>
+        <p className="mt-4 text-sm">personal multi ai agent by @aminroumiany</p>
       </div>
 
       <SettingsDialog open={settingsOpen} onOpenChange={setSettingsOpen} />
