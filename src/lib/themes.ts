@@ -50,6 +50,52 @@ const cyberpunkColors: Record<string, string> = {
     '--radius': '0.25rem',
 };
 
+const draculaColors: Record<string, string> = {
+    '--background': '231 15% 18%',
+    '--foreground': '60 30% 96%',
+    '--card': '232 14% 25%',
+    '--card-foreground': '60 30% 96%',
+    '--popover': '231 15% 18%',
+    '--popover-foreground': '60 30% 96%',
+    '--primary': '272 88% 78%', // Purple
+    '--primary-foreground': '60 30% 96%',
+    '--secondary': '232 14% 31%',
+    '--secondary-foreground': '60 30% 96%',
+    '--muted': '232 14% 31%',
+    '--muted-foreground': '232 14% 60%',
+    '--accent': '160 84% 62%', // Cyan
+    '--accent-foreground': '231 15% 18%',
+    '--destructive': '352 70% 54%', // Red
+    '--destructive-foreground': '60 30% 96%',
+    '--border': '232 14% 31%',
+    '--input': '232 14% 31%',
+    '--ring': '272 88% 78%',
+    '--radius': '0.5rem',
+};
+
+const synthwaveColors: Record<string, string> = {
+    '--background': '261 24% 18%',
+    '--foreground': '0 0% 100%',
+    '--card': '261 21% 26%',
+    '--card-foreground': '0 0% 100%',
+    '--popover': '261 24% 18%',
+    '--popover-foreground': '0 0% 100%',
+    '--primary': '327 100% 74%', // Hot Pink
+    '--primary-foreground': '261 24% 10%',
+    '--secondary': '261 21% 32%',
+    '--secondary-foreground': '0 0% 100%',
+    '--muted': '261 21% 32%',
+    '--muted-foreground': '261 21% 65%',
+    '--accent': '172 100% 48%', // Bright Teal
+    '--accent-foreground': '261 24% 10%',
+    '--destructive': '0 84% 60%',
+    '--destructive-foreground': '0 0% 100%',
+    '--border': '261 21% 32%',
+    '--input': '261 21% 32%',
+    '--ring': '327 100% 74%',
+    '--radius': '0.75rem',
+};
+
 export const themes: Theme[] = [
   {
     name: 'KernelPunk',
@@ -60,5 +106,15 @@ export const themes: Theme[] = [
     name: 'Cyberpunk',
     id: 'cyberpunk',
     colors: cyberpunkColors,
+  },
+  {
+    name: 'Dracula',
+    id: 'dracula',
+    colors: draculaColors,
+  },
+  {
+    name: 'Synthwave',
+    id: 'synthwave',
+    colors: synthwaveColors,
   },
 ];

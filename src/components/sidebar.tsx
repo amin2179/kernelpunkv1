@@ -37,8 +37,7 @@ export function Sidebar({ closeSidebar }: SidebarProps) {
       </div>
       
       <div className="mt-auto p-4 text-center text-xs text-muted-foreground">
-        <p>i ToLd U im BEtter</p>
-        <p>GoOd NIGht baBE</p>
+        <p>its sleep baby dont were awake</p>
         <p className="mt-4">personal multi ai agent by @aminroumiany</p>
       </div>
 
